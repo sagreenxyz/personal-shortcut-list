@@ -13,13 +13,13 @@ app.get('/two', function (req, res) {
 
 app.get('/research/:animal', function (req, res) {
     res.send('Research ' + req.params.animal);
-}) // http://localhost:3000/research/dog
+}) // http://localhost:3000/research/dog ==> query parameter
 
 app.get('/square/:x', function (req, res) {
     let x = Number(req.params.x);
     let result = x * x;
     res.send(`${x} squared is ${result}.`)
-}) // http://localhost:3000/square/5
+}) // http://localhost:3000/square/5 ==> query parameter
 
 app.listen(process.env.PORT, () => {
     console.log('I am awake again!...');
