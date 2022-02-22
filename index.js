@@ -4,8 +4,22 @@ const express = require('express');
 const app = express();
 
 app.get('/', function (req, res) {
-    res.send('HELLO WORLD!  Again');
+    res.send('HOME PAGE');
 })
+
+app.get('/two', function (req, res) {
+    res.send('PAGE TWO');
+})
+
+app.get('/research/:animal', function (req, res) {
+    res.send('Research ' + req.params.animal);
+}) // http://localhost:3000/research/dog
+
+app.get('/square/:x', function (req, res) {
+    let x = Number(req.params.x);
+    let result = x * x;
+    res.send(`${x} squared is ${result}.`)
+}) // http://localhost:3000/square/5
 
 app.listen(process.env.PORT, () => {
     console.log('I am awake again!...');
