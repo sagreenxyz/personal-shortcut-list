@@ -21,6 +21,9 @@ app.get('/square/:x', function (req, res) {
     res.send(`${x} squared is ${result}.`)
 }) // http://localhost:3000/square/5 ==> query parameter
 
+// don't put sensitive information in query parameters or query strings
+
+
 app.listen(process.env.PORT, () => {
     console.log('I am awake again!...');
 });
